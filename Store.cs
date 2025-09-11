@@ -34,5 +34,6 @@ public class Store
         var getterproduct = products.FirstOrDefault(p => p.Name == "alfajor");
         
         Console.Write(getterproduct.Price);
+        
     }
 }
