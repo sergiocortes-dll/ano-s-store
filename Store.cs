@@ -19,21 +19,25 @@ public class Store
         products.Add(new Product() { Name = "Barrilete", Price = 400, Stock = 15 });
         products.Add(new Product() { Name = "Galletica", Price = 500, Stock = 30 });
 
+        Console.Clear();
+
         Console.ForegroundColor = ConsoleColor.Cyan;
-        Console.WriteLine($"{"ANO'S STORE", 23}");
+        Console.WriteLine(new string('=', 44));
+        Console.WriteLine($"{"ANO'S STORE",27}");
+        Console.WriteLine(new string('=', 44));
         Console.ResetColor();
+
         Console.Write("\x1b[1m"); 
-        Console.WriteLine($"{"PRODUCTO",-23}  {"PRECIO",0}");
+        Console.WriteLine($"{"#",2}  {"PRODUCTO",-20}{"PRECIO",10}{"CANTIDAD",10}");
         Console.Write("\x1b[0m"); 
+
+        int count = 1;
+
         foreach (var product in products)
         {
-            int index = products.FindIndex(p => p.Name == product.Name);
-            Console.WriteLine($"{index + 1,1}. {product.Name,-20} ${product.Price,10:F2}");
+            Console.WriteLine($"{count++,2}. {product.Name,-20}${product.Price,9:F2}{product.Stock,10}");
         }
         
-        var getterproduct = products.FirstOrDefault(p => p.Name == "alfajor");
-        
-        Console.Write(getterproduct.Price);
-        
+        Console.ResetColor();
     }
 }
