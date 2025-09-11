@@ -31,8 +31,8 @@ public class Store
             Console.WriteLine($"{index + 1,1}. {product.Name,-20} ${product.Price,10:F2}");
         }
         
-        // var product = products.FirstOrDefault(p => p.Name == "alfajor");
+        var getterproduct = products.FirstOrDefault(p => p.Name == "alfajor");
         
-        //Console.Write(product.Price);
+        Console.Write(getterproduct.Price);
     }
 }
